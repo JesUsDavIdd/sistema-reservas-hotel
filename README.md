@@ -93,10 +93,8 @@ Después de cada captura el programa continúa. Las validaciones simples usan `V
 
 ## Documentación y revisión
 
-Consulte [el UML](UML.md), [el diagrama SVG](UML.svg) y
-[las decisiones de diseño](DECISIONES_DISENO.md). La [guía del equipo](GUIA_EQUIPO.md) detalla lo que
-todavía deben revisar y realizar los integrantes antes de la entrega.
+Consulte [el UML](UML.md), [el diagrama SVG](UML.svg),
+[las decisiones de diseño](DECISIONES_DISENO.md) y la [guía del equipo](GUIA_EQUIPO.md).
 
-Esta versión fue preparada con apoyo de OpenAI Codex para proponer el diseño, escribir código,
-documentar y preparar las pruebas. El equipo debe revisar y comprender el contenido y actualizar
-la declaración si utiliza otras herramientas. No se atribuyen commits ni revisiones a los integrantes.
+Se utilizó OpenAI Codex como apoyo para organizar el paso a paso del proyecto y elaborar
+el código, la documentación y las pruebas.
