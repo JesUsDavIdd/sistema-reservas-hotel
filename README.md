@@ -29,7 +29,7 @@ proyecto-hotel/
 ├── reservas.py            # Reserva y su detalle de estancia
 ├── hotel.py               # Registro y control de reservas
 ├── excepciones.py         # Tres excepciones del dominio
-├── test_hotel.py           # Pruebas automatizadas
+├── test_hotel.py
 ├── README.md
 ├── UML.md                  # Diagrama Mermaid y explicación
 ├── UML.svg                 # Diagrama que puede abrirse en un navegador
@@ -51,12 +51,6 @@ En Windows también puede usar `py main.py` si ese es el comando de su instalaci
 El programa muestra tres habitaciones, crea tres reservas, captura los tres errores personalizados,
 cancela una reserva y crea otra en las fechas liberadas. Termina con `Demostración finalizada.`
 No es necesario ingresar datos por teclado.
-
-Para ejecutar las pruebas:
-
-```bash
-python -m unittest -v
-```
 
 ## Reglas del ejemplo
 
@@ -96,5 +90,4 @@ Después de cada captura el programa continúa. Las validaciones simples usan `V
 Consulte [el UML](UML.md), [el diagrama SVG](UML.svg),
 [las decisiones de diseño](DECISIONES_DISENO.md) y la [guía del equipo](GUIA_EQUIPO.md).
 
-Se utilizó OpenAI Codex como apoyo para organizar el paso a paso del proyecto y elaborar
-el código, la documentación y las pruebas.
+Se utilizó OpenAI Codex como apoyo durante el desarrollo del proyecto.

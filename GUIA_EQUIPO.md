@@ -18,7 +18,7 @@ La publicación no acredita por sí sola los aportes de desarrollo de ambos inte
 | Composición | Reserva construye su DetalleEstadia. |
 | Tres excepciones lanzadas y capturadas | excepciones.py; Hotel y DetalleEstadia; tres bloques try/except de main.py. |
 | Ocho objetos o más | Solo hotel, tres habitaciones, tres clientes y tres reservas ya suman diez; los detalles son adicionales. |
-| Casos normales y excepcionales | main.py y test_hotel.py. |
+| Casos normales y excepcionales | main.py. |
 | UML y decisiones de diseño | UML.md, UML.svg y DECISIONES_DISENO.md. |
 | README | README.md. |
 | Un commit de desarrollo por integrante | Pendiente de realizar por cada integrante. |
@@ -27,13 +27,13 @@ La publicación no acredita por sí sola los aportes de desarrollo de ambos inte
 ## Trabajo real sugerido
 
 1. Jesús revisa y explica `Hotel`, las reservas y las excepciones. Puede implementar una consulta
-   de reservas activas y demostrar que las canceladas no aparecen, con una prueba propia.
+   de reservas activas y demostrar que las canceladas no aparecen.
 2. Juan José revisa y explica las habitaciones y las tarifas. Puede implementar una consulta de
    habitaciones disponibles para un intervalo, utilizando la regla de cruces existente y comprobando
    casos de salida y entrada el mismo día.
 3. Cada uno realiza sus cambios desde su cuenta, describe lo que hizo y abre su pull request.
    No crear commits vacíos ni atribuir a otra persona cambios preparados sin su participación.
-4. Ambos ejecutan `python main.py` y `python -m unittest -v`, revisan el UML y actualizan las decisiones
+4. Ambos ejecutan `python main.py`, revisan el UML y actualizan las decisiones
    de diseño con sus cambios y aprendizajes reales.
 5. Integrar los aportes en el repositorio público del hotel y compartir su enlace para la entrega.
 

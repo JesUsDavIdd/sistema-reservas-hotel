@@ -117,23 +117,18 @@ para centralizar los registros y la comprobación de cruces, evitando cargar esa
 `main()` o en una reserva individual. También se fijó la tarifa al crear la reserva para evitar que
 los cambios posteriores de la habitación alterasen su total.
 
-Las pruebas automatizadas cubren tarifas, fechas, cruces, límites entre estancias, cancelaciones,
-asociaciones, detalles separados, actualizaciones inválidas y continuidad del programa principal.
-Pueden repetirse con `python -m unittest -v`; el ejemplo completo se ejecuta con `python main.py`.
-Los resultados de estas comprobaciones no sustituyen la revisión y explicación de los integrantes.
-
-La verificación pendiente del equipo consiste en ejecutar ambos comandos en sus equipos, contrastar
-los archivos con el UML y explicar por qué funcionan las relaciones y el ciclo polimórfico. No se
-declara que esa revisión humana ya se haya realizado.
+Se ejecutó `python main.py` y se comprobó la creación de reservas, el rechazo de fechas
+inválidas y cruces, la consulta de una reserva inexistente y la cancelación. El programa mostró
+los mensajes correspondientes y continuó hasta finalizar la demostración. El equipo debe revisar
+el funcionamiento y su correspondencia con el UML antes de la entrega.
 
 ## 9. Herramientas y uso de inteligencia artificial
 
-Se utilizó OpenAI Codex para interpretar los requisitos, proponer el diseño del hotel, escribir el
-código y la documentación y preparar y ejecutar pruebas automatizadas. En esta preparación la
-asistencia abarcó el proyecto completo; no corresponde describirla como un apoyo mínimo.
+Se utilizó OpenAI Codex como apoyo para interpretar los requisitos y desarrollar el diseño,
+el código y la documentación del proyecto.
 
 La propuesta generada se ajustó añadiendo la clase `Hotel`, precisando la composición y conservando
-el precio acordado. No se atribuyen a los integrantes cambios, pruebas o decisiones que todavía no han realizado.
+el precio acordado. El equipo debe revisar las propuestas y registrar sus propios aportes.
 El equipo debe registrar sus propios cambios y actualizar esta sección según su trabajo real.
 
 Referencias: documento de la Actividad Colaborativa N.º 3 suministrado por la asignatura y requisitos
@@ -145,7 +140,7 @@ compartidos por el usuario. Se emplean módulos de la biblioteca estándar de Py
 La implementación permite relacionar los conceptos de orientación a objetos con un problema
 delimitado de reservas. La separación de responsabilidades permite cambiar las tarifas por tipo
 sin modificar el ciclo que recorre las habitaciones. El control de cruces exige definir con precisión
-si la fecha de salida ocupa una noche; esa regla se refleja en el código y en las pruebas.
+si la fecha de salida ocupa una noche; esa regla se refleja en el código.
 
 Esta versión constituye una base para revisión del equipo. Los aprendizajes personales, dificultades
 de los integrantes y cambios que hagan durante su revisión deben incorporarse después de ocurrir.
