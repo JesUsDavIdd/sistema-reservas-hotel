@@ -50,3 +50,16 @@ class Hotel:
 
     def listar_reservas(self):
         return tuple(self._reservas.values())
+
+    def consultar_habitaciones_disponibles(self, entrada, salida):
+        disponibles = []
+        for habitacion in self._habitaciones.values():
+            ocupada = False
+            for reserva in self._reservas.values():
+                if reserva.activa and reserva.habitacion.numero == habitacion.numero:
+                    if reserva.detalle.se_cruza_con((entrada, salida)):
+                        ocupada = True
+                        break
+            if not ocupada:
+                disponibles.append(habitacion)
+        return tuple(disponibles)
