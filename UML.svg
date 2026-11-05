@@ -7,7 +7,7 @@
 <g font-family="Arial, sans-serif" fill="#0f172a">
 <text x="800" y="38" text-anchor="middle" font-size="25" font-weight="bold">Sistema de reservas de hotel — UML</text>
 
-<rect x="550" y="80" width="500" height="324" fill="white" stroke="#334155" stroke-width="1.6"/>
+<rect x="550" y="80" width="500" height="380" fill="white" stroke="#334155" stroke-width="1.6"/>
 <rect x="550" y="80" width="500" height="40" fill="#dbeafe" stroke="#334155" stroke-width="1.6"/>
 <text x="800.0" y="107" font-size="20" text-anchor="middle" font-weight="bold">Hotel</text>
 <text x="564" y="144" font-size="17" >- _nombre</text>
@@ -20,6 +20,8 @@
 <text x="564" y="326" font-size="16" >+ consultar_reserva(codigo)</text>
 <text x="564" y="354" font-size="16" >+ cancelar_reserva(codigo)</text>
 <text x="564" y="382" font-size="16" >+ listar_reservas()</text>
+<text x="564" y="410" font-size="16" >+ listar_reservas_activas()</text>
+<text x="564" y="438" font-size="16" >+ consultar_habitaciones_disponibles(entrada, salida)</text>
 <rect x="550" y="530" width="500" height="324" fill="white" stroke="#334155" stroke-width="1.6"/>
 <rect x="550" y="530" width="500" height="40" fill="#dbeafe" stroke="#334155" stroke-width="1.6"/>
 <text x="800.0" y="557" font-size="20" text-anchor="middle" font-weight="bold">Reserva</text>
@@ -80,7 +82,7 @@
 <path d="M1130 1343 H1560" stroke="#334155"/>
 <text x="1144" y="1366" font-size="16" >+ calcular_tarifa()</text>
 <text x="1144" y="1394" font-size="16" >+ mostrar_informacion()</text>
-<path d="M800 404 V530" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#flecha)"/>
+<path d="M800 460 V530" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#flecha)"/>
 <text x="814" y="485" font-size="16" >1 registra 0..*</text>
 <path d="M550 640 H390" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#flecha)"/>
 <text x="405" y="620" font-size="16" >0..* → 1</text>

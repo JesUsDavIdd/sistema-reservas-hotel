@@ -1,7 +1,7 @@
 """Registro de habitaciones, consulta y control de reservas."""
 
 from excepciones import HabitacionOcupadaError, ReservaNoEncontradaError
-from reservas import Reserva
+from reservas import Reserva, DetalleEstadia
 
 
 class Hotel:
@@ -51,13 +51,21 @@ class Hotel:
     def listar_reservas(self):
         return tuple(self._reservas.values())
 
+    def listar_reservas_activas(self):
+        activas = []
+        for reserva in self._reservas.values():
+            if reserva.activa:
+                activas.append(reserva)
+        return tuple(activas)
+
     def consultar_habitaciones_disponibles(self, entrada, salida):
+        periodo = DetalleEstadia(entrada, salida)
         disponibles = []
         for habitacion in self._habitaciones.values():
             ocupada = False
             for reserva in self._reservas.values():
                 if reserva.activa and reserva.habitacion.numero == habitacion.numero:
-                    if reserva.detalle.se_cruza_con((entrada, salida)):
+                    if reserva.detalle.se_cruza_con(periodo):
                         ocupada = True
                         break
             if not ocupada:

@@ -1,8 +1,7 @@
 # Revisión antes de entregar
 
-Esta es una propuesta implementada y publicada como versión base en
+El proyecto está implementado y publicado con los cambios integrados en
 [GitHub](https://github.com/JesUsDavIdd/sistema-reservas-hotel).
-La publicación no acredita por sí sola los aportes de desarrollo de ambos integrantes.
 
 ## Requisitos localizados
 
@@ -21,23 +20,20 @@ La publicación no acredita por sí sola los aportes de desarrollo de ambos inte
 | Casos normales y excepcionales | main.py. |
 | UML y decisiones de diseño | UML.md, UML.svg y DECISIONES_DISENO.md. |
 | README | README.md. |
-| Un commit de desarrollo por integrante | Pendiente de realizar por cada integrante. |
+| Un commit de desarrollo por integrante | Aporte de Juan José en PR #1 y cambio solicitado por Jesús en el historial de main. |
 | Enlace al repositorio | https://github.com/JesUsDavIdd/sistema-reservas-hotel |
 
-## Trabajo real sugerido
+## Cambios integrados
 
-1. Jesús revisa y explica `Hotel`, las reservas y las excepciones. Puede implementar una consulta
-   de reservas activas y demostrar que las canceladas no aparecen.
-2. Juan José revisa y explica las habitaciones y las tarifas. Puede implementar una consulta de
-   habitaciones disponibles para un intervalo, utilizando la regla de cruces existente y comprobando
-   casos de salida y entrada el mismo día.
-3. Cada uno realiza sus cambios desde su cuenta, describe lo que hizo y abre su pull request.
-   No crear commits vacíos ni atribuir a otra persona cambios preparados sin su participación.
-4. Ambos ejecutan `python main.py`, revisan el UML y actualizan las decisiones
-   de diseño con sus cambios y aprendizajes reales.
-5. Integrar los aportes en el repositorio público del hotel y compartir su enlace para la entrega.
+- Juan José envió la consulta de habitaciones disponibles en el
+  [pull request #1](https://github.com/JesUsDavIdd/sistema-reservas-hotel/pull/1).
+- Desde la cuenta de Jesús se publicó la consulta de reservas activas, la corrección de la comparación
+  de fechas y la actualización del programa principal y la documentación. Ese cambio se preparó
+  con apoyo de Codex, según lo indicado en las decisiones de diseño.
 
-Estos dos cambios son propuestas pendientes, no funciones incluidas en esta versión.
+El [historial](https://github.com/JesUsDavIdd/sistema-reservas-hotel/commits/main/)
+conserva ambos cambios. Para revisar la versión integrada, ejecutar `python main.py` y contrastar
+los resultados con los métodos descritos en el UML.
 
 ## Preguntas para comprobar la comprensión
 

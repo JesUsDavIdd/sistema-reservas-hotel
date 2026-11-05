@@ -49,6 +49,17 @@ def main():
     print(hotel.consultar_reserva("R1").mostrar_informacion())
     nueva = hotel.crear_reserva("R6", clientes[1], "101", date(2026, 12, 1), date(2026, 12, 4))
     print(nueva.mostrar_informacion())
+
+    print("\nReservas activas:")
+    for reserva in hotel.listar_reservas_activas():
+        print(reserva.mostrar_informacion())
+
+    print("\nHabitaciones disponibles del 2 al 3 de diciembre de 2026:")
+    disponibles = hotel.consultar_habitaciones_disponibles(date(2026, 12, 2), date(2026, 12, 3))
+    for habitacion in disponibles:
+        print(habitacion.mostrar_informacion())
+    if not disponibles:
+        print("No hay habitaciones disponibles para esas fechas.")
     print("\nDemostración finalizada.")
 
 

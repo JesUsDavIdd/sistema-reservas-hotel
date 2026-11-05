@@ -13,7 +13,8 @@ Repositorio público: [sistema-reservas-hotel](https://github.com/JesUsDavIdd/si
 
 El sistema registra habitaciones y reservas de un hotel pequeño. Permite consultar una reserva,
 cancelarla y calcular su valor según las noches y el tipo de habitación. Evita que dos reservas
-activas ocupen la misma habitación en fechas que se cruzan.
+activas ocupen la misma habitación en fechas que se cruzan. También consulta las reservas activas
+y las habitaciones disponibles para un intervalo.
 
 El alcance es una demostración por consola, con información en memoria. No tiene menú interactivo,
 base de datos, pagos ni conexión con hoteles reales. Al cerrar el programa se pierden los registros.
@@ -49,7 +50,8 @@ python main.py
 
 En Windows también puede usar `py main.py` si ese es el comando de su instalación.
 El programa muestra tres habitaciones, crea tres reservas, captura los tres errores personalizados,
-cancela una reserva y crea otra en las fechas liberadas. Termina con `Demostración finalizada.`
+cancela una reserva y crea otra en las fechas liberadas. Finalmente muestra las reservas activas
+y consulta habitaciones disponibles. Termina con `Demostración finalizada.`
 No es necesario ingresar datos por teclado.
 
 ## Reglas del ejemplo
@@ -62,6 +64,8 @@ No es necesario ingresar datos por teclado.
 - Suite: tarifa base más $80.000 por noche si tiene jacuzzi.
 - El precio por noche queda fijado al crear la reserva.
 - La cancelación conserva la reserva en el historial, pero libera las fechas. Repetirla no produce cambios.
+- La consulta de reservas activas excluye las canceladas sin borrar el historial.
+- La consulta de disponibilidad valida las fechas y excluye las habitaciones con reservas activas que se cruzan.
 - Los números de habitación y códigos de reserva son únicos. Un código cancelado no se reutiliza.
 - Se permiten fechas pasadas para facilitar los ejemplos; no se controla la fecha actual.
 

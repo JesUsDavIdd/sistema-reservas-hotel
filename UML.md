@@ -62,6 +62,8 @@ classDiagram
         +consultar_reserva(codigo)
         +cancelar_reserva(codigo)
         +listar_reservas()
+        +listar_reservas_activas()
+        +consultar_habitaciones_disponibles(entrada, salida)
     }
     class FechasInvalidasError {
         <<exception>>
@@ -82,6 +84,7 @@ classDiagram
     Hotel "1" --> "0..*" Reserva : registra
     Hotel ..> HabitacionOcupadaError : lanza
     Hotel ..> ReservaNoEncontradaError : lanza
+    Hotel ..> DetalleEstadia : construye periodo de consulta
     DetalleEstadia ..> FechasInvalidasError : lanza
 ```
 

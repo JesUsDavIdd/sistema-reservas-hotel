@@ -7,7 +7,8 @@
 
 **Integrantes:** Juan Jose Lopera Morales y Jesus David Becerra Tascon.  
 **Fecha de preparación:** 2 de noviembre de 2026.  
-**Estado:** propuesta implementada con apoyo de IA; pendiente de revisión y aportes del equipo.
+**Estado:** versión integrada con consultas de disponibilidad y reservas activas.  
+**Última actualización:** 4 de noviembre de 2026.
 
 ## 1. Introducción
 
@@ -33,7 +34,7 @@ reservas. Los datos se conservan en memoria. No se incluyen pagos, usuarios, per
 | `Cliente` | Conservar el documento y un nombre válido del huésped. |
 | `DetalleEstadia` | Validar fechas, calcular noches y detectar cruces entre estancias. |
 | `Reserva` | Unir cliente y habitación con una estancia, conservar la tarifa y controlar la cancelación. |
-| `Hotel` | Mantener los registros y evitar reservas incompatibles. |
+| `Hotel` | Mantener los registros, evitar reservas incompatibles y consultar reservas activas y habitaciones disponibles. |
 
 Existen siete clases concretas del dominio y una abstracta, sin contar las excepciones.
 La responsabilidad de detectar conflictos queda en `Hotel`, porque una reserva aislada no conoce
@@ -117,8 +118,18 @@ para centralizar los registros y la comprobación de cruces, evitando cargar esa
 `main()` o en una reserva individual. También se fijó la tarifa al crear la reserva para evitar que
 los cambios posteriores de la habitación alterasen su total.
 
+Se integró la consulta `consultar_habitaciones_disponibles()` enviada por Juan José en el pull
+request #1. Al revisarla se identificó que `se_cruza_con()` recibía una tupla, aunque esperaba
+un objeto con fechas de entrada y salida. La corrección construye un `DetalleEstadia` para el
+periodo consultado, reutilizando tanto su validación de fechas como la comparación existente.
+
+También se añadió `listar_reservas_activas()` en el cambio solicitado por Jesús, preparado con
+apoyo de Codex. Este método devuelve una tupla con las reservas cuyo estado es activo y conserva
+las canceladas en el historial. Las dos consultas se muestran ahora en el programa principal y
+figuran en el UML.
+
 Se ejecutó `python main.py` y se comprobó la creación de reservas, el rechazo de fechas
-inválidas y cruces, la consulta de una reserva inexistente y la cancelación. El programa mostró
+inválidas y cruces, la consulta de una reserva inexistente, la cancelación y las dos nuevas consultas. El programa mostró
 los mensajes correspondientes y continuó hasta finalizar la demostración. El equipo debe revisar
 el funcionamiento y su correspondencia con el UML antes de la entrega.
 
@@ -128,8 +139,9 @@ Se utilizó OpenAI Codex como apoyo para interpretar los requisitos y desarrolla
 el código y la documentación del proyecto.
 
 La propuesta generada se ajustó añadiendo la clase `Hotel`, precisando la composición y conservando
-el precio acordado. El equipo debe revisar las propuestas y registrar sus propios aportes.
-El equipo debe registrar sus propios cambios y actualizar esta sección según su trabajo real.
+el precio acordado. La consulta de reservas activas y la corrección de la consulta de disponibilidad
+también se prepararon con ese apoyo. El historial conserva el aporte enviado desde la cuenta
+de Juan José y el cambio publicado desde la cuenta de Jesús.
 
 Referencias: documento de la Actividad Colaborativa N.º 3 suministrado por la asignatura y requisitos
 compartidos por el usuario. Se emplean módulos de la biblioteca estándar de Python: `abc`,
@@ -142,8 +154,10 @@ delimitado de reservas. La separación de responsabilidades permite cambiar las 
 sin modificar el ciclo que recorre las habitaciones. El control de cruces exige definir con precisión
 si la fecha de salida ocupa una noche; esa regla se refleja en el código.
 
-Esta versión constituye una base para revisión del equipo. Los aprendizajes personales, dificultades
-de los integrantes y cambios que hagan durante su revisión deben incorporarse después de ocurrir.
-No se incluyen experiencias inventadas para completar ese apartado. Antes de la entrega faltan
-esa revisión y los aportes reales de ambos integrantes. La versión base se publica en
+La integración de la consulta de disponibilidad permitió identificar una dificultad concreta:
+los métodos que comparan periodos deben recibir objetos con una estructura compatible. Reutilizar
+`DetalleEstadia` resolvió esa diferencia y evitó duplicar la validación de fechas. La consulta de
+reservas activas muestra cómo obtener una vista del registro sin borrar información del historial.
+
+La versión integrada y su historial de cambios se encuentran en
 https://github.com/JesUsDavIdd/sistema-reservas-hotel.
